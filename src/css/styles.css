@@ -4,8 +4,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #1E1E22;
     color: #fff;
-    overflow-x: scroll; /* Enable horizontal scrolling */
-    overflow-y: hidden; /* Disable vertical scrolling */
 }
 
 .top-bar {
@@ -50,9 +48,6 @@ body {
     color: #2C2C2C;
 }
 
-.scroll-padding {
-    width: 20px; /* Width of padding to account for scrollbar */
-}
 
 @media (max-width: 768px) {
     .column {
