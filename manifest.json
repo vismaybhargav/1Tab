@@ -1,17 +1,13 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "1Tab",
   "version": "0.1",
   "description": "A new tab extension that shows you everything, in one easy place",
   "author": "VTAA",
-  "chrome_url_overrides" : 
+  "chrome_url_overrides":  {
     "newtab": "src/index.html"
   },
   "permissions": [
     "storage"
-  ],
-  "icons": {
-    "16": "",
-    "128": ""
-  }
+  ]
 }
