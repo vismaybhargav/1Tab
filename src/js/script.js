@@ -1,3 +1,7 @@
+
+/*
+ * This is some sample code so that github will actually recognize this dir
+ */
 function printTriangle(n) {
     for (let i = 1; i <= n; i++) {
         let str = '';
@@ -7,3 +11,5 @@ function printTriangle(n) {
         console.log(str);
     }
 }
+
+

@@ -1,0 +1,15 @@
+{
+  "name": "1tab",
+  "version": "1.0.0",
+  "description": "1 tab, infinite possibilities...",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.8"
+  }
+}
