@@ -1,15 +1,16 @@
+document.addEventListener('DOMContentLoaded', function () {
+    const addColumnBtn = document.querySelector('.add-column-btn');
+    const container = document.querySelector('.container');
 
-/*
- * This is some sample code so that github will actually recognize this dir
- */
-function printTriangle(n) {
-    for (let i = 1; i <= n; i++) {
-        let str = '';
-        for (let j = 1; j <= i; j++) {
-            str += '*';
+    addColumnBtn.addEventListener('click', function () {
+        const columns = container.querySelectorAll('.column');
+
+        // Check if the number of columns is less than 4
+        if (columns.length < 4) {
+            const newColumn = document.createElement('div');
+            newColumn.className = 'column';
+            newColumn.textContent = 'New Column';
+            container.appendChild(newColumn);
         }
-        console.log(str);
-    }
-}
-
-
+    });
+});
