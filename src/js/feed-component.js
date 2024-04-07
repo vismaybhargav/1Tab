@@ -34,6 +34,7 @@ async function createColumn(source) {
 
         switch (source) {
             case "Sports News":
+                parseSportsNews(jsonString, columnContent);
                 break;
             case "Github Trending":
                 parseGithub(jsonString, columnContent)
