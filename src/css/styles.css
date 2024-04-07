@@ -51,14 +51,38 @@ body {
     max-width: calc(33.33% - 20px); /* Set max-width to one-third of the container width minus margin */
 }
 
-.column-header {
+.column-header-github {
     margin-bottom: 5px;
     font-weight: bold;
     font-size: 26px;
     color: #fff; /* Set text color to white */
     background-color: #000; /* Set background color to black */
     padding: 10px; /* Add padding to the header */
-    padding-bottom: 10px;
+    padding-bottom: 40px;
+    border-top-left-radius: 10px; /* Add border radius to the top-left corner */
+    border-top-right-radius: 10px; /* Add border radius to the top-right corner */
+}
+
+.column-header-sports-news {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 26px;
+    color: #fff; /* Set text color to white */
+    background-color: #FF0032; /* Set background color to black */
+    padding: 10px; /* Add padding to the header */
+    padding-bottom: 40px;
+    border-top-left-radius: 10px; /* Add border radius to the top-left corner */
+    border-top-right-radius: 10px; /* Add border radius to the top-right corner */
+}
+
+.column-header-new-york-times {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 26px;
+    color: #fff; /* Set text color to white */
+    background-color: #0070EF; /* Set background color to black */
+    padding: 10px; /* Add padding to the header */
+    padding-bottom: 40px;
     border-top-left-radius: 10px; /* Add border radius to the top-left corner */
     border-top-right-radius: 10px; /* Add border radius to the top-right corner */
 }
@@ -142,6 +166,7 @@ body {
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
+    font-family: serif;
     text-align: left; /* Align text to the left */
 }
 
@@ -158,4 +183,5 @@ body {
     border-radius: 5px;
     cursor: pointer;
 }
+
 
