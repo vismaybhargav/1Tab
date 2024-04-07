@@ -196,4 +196,16 @@ body {
     cursor: pointer;
 }
 
+/* CSS Styles */
+.positive-change {
+    color: green;
+}
+
+.negative-change {
+    color: red;
+}
+
+.no-change {
+    color: inherit; /* Default color */
+}
 
