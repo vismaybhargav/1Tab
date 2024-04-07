@@ -13,13 +13,15 @@ async function createColumn(source) {
     try {
         if (source === 'Sports News') {
             const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/sportsnews');
-            const data = await response.text();
-            columnContent.innerHTML = data; // Set the content of the column to the fetched data
+            columnContent.innerHTML = await response.text(); // Set the content of the column to the fetched data
         }
         if (source === 'Github Trending') {
-            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/github_trending');
-            const data = await response.text();
-            columnContent.innerHTML = data; // Set the content of the column to the fetched data
+            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/git_trending');
+            columnContent.innerHTML = await response.text(); // Set the content of the column to the fetched data
+        }
+        if (source === 'The New York Times') {
+            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/nytimes');
+            columnContent.innerHTML = await response.text(); // Set the content of the column to the fetched data
         }
     } catch (error) {
         console.error('Error fetching response:', error);

@@ -1,0 +1,9 @@
+{
+  "name": "Bobby Bobbington",
+  "subscribed-components": [
+    "github-trending",
+    "hacker-news",
+    "reddit",
+    "news"
+  ]
+}
