@@ -10,22 +10,24 @@ async function createColumn(source) {
     columnContent.className = 'column-content';
 
     try {
-        if (source === 'Sports News') {
-            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/sportsnews');
-            columnContent.innerHTML = await response.text();
+        let uri = "";
+        switch (source) {
+            case "Sports News":
+                uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/sportsnews";
+                break;
+            case "Github Trending":
+                uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/git_trending";
+                break;
+            case "The New York Times":
+                uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/nytimes";
+                break;
+            case "Stocks":
+                uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/stocks";
+                break;
         }
-        if (source === 'Github Trending') {
-            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/git_trending');
-            columnContent.innerHTML = await response.text();
-        }
-        if (source === 'The New York Times') {
-            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/nytimes');
-            columnContent.innerHTML = await response.text();
-        }
-        if (source === 'Stocks') {
-            const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/stocks');
-            columnContent.innerHTML = await response.text();
-        }
+
+        const response = await fetch(uri);
+        columnContent.innerHTML = await response.text();
     } catch (error) {
         console.error('Error fetching response:', error);
         columnContent.textContent = 'Error fetching data';
