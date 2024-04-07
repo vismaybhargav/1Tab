@@ -43,11 +43,12 @@ body {
     background-color: #18181B;
     border-radius: 10px;
     padding: 20px;
-    margin-right: 50px;
+    margin-right: 20px; /* Reduce margin to prevent overflow */
     box-sizing: border-box;
     color: #ffffff;
     display: flex;
     flex-direction: column;
+    max-width: calc(33.33% - 20px); /* Set max-width to one-third of the container width minus margin */
 }
 
 .column-header {
@@ -68,14 +69,21 @@ body {
 }
 
 @media (max-width: 768px) {
+    .container {
+        flex-wrap: wrap; /* Allow columns to wrap at smaller screen sizes */
+        justify-content: space-between; /* Align columns evenly on smaller screens */
+    }
+
     .column {
-        width: calc(50% - 20px);
+        max-width: calc(50% - 20px); /* Set max-width to one-half of the container width minus margin */
+        margin-bottom: 20px; /* Add some space between columns */
     }
 }
 
 @media (max-width: 480px) {
     .column {
-        width: calc(100% - 20px);
+        max-width: calc(100% - 20px); /* Set max-width to full width minus margin */
+        margin-right: 0; /* Remove margin at smaller screen sizes */
     }
 }
 
@@ -110,4 +118,27 @@ body {
 
 .dropdown:hover .dropbtn {
     background-color: #3e8e41;
+}
+
+.column-content a {
+    display: block; /* Ensure each button is on a new line */
+}
+
+.column-content button {
+    width: 100%;
+    background-color: #1E1E22;
+    color: #fff;
+    border: none;
+    padding: 5px 10px; /* Adjust padding to move text */
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: left; /* Align text to the left */
+}
+
+
+
+/* Change the background color of buttons on hover */
+.column-content button:hover {
+    background-color: #4F5157; /* Change to desired hover background color */
 }

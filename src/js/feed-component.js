@@ -24,6 +24,9 @@ async function createColumn(source) {
             case "Stocks":
                 uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/stocks";
                 break;
+            case "Hacker News":
+                uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/hackernews";
+                break;
         }
 
         const response = await fetch(uri);
@@ -47,6 +50,18 @@ async function createColumn(source) {
 
     newColumn.appendChild(columnHeader);
     newColumn.appendChild(columnContent);
+
+    // Convert text into buttons
+    const links = columnContent.querySelectorAll('a');
+    links.forEach(link => {
+        const button = document.createElement('button');
+        button.textContent = link.textContent;
+        button.onclick = () => {
+            window.location.href = link.href;
+        };
+        columnContent.appendChild(button);
+        columnContent.removeChild(link);
+    });
 
     return newColumn;
 }
