@@ -24,9 +24,9 @@ function parseSportsNews(jsonString, columnContent) {
         columnContent.innerHTML += ` 
         <a href="${a.url}">
             <div class="column-block-sportsnew">
-                <h1>${t.substring(0, t.lastIndexOf(" - "))}</h1>
-                <p>${a.description}</p>
-                <h3>${a.source.name}</h3>
+                <h1 class="sports-news-title">${t.substring(0, t.lastIndexOf(" - "))}</h1>
+                <p class="sports-news-desc">${a.description}</p>
+                <h3 class="sports-news-source">${a.source.name}</h3>
             </div>
         </a>
         `;
@@ -57,15 +57,24 @@ function parseStocks(jsonString, columnContent) {
     for (const symbol in results) {
         if (results.hasOwnProperty(symbol)) {
             const data = results[symbol];
-            columnContent.innerHTML += `
-              <a href="https://example.com">
-                <div class="column-block-stocks">
-                 <h1>${symbol}</h1>
-                   <p>Closing Price: ${data['c']}</p>
-                   <p>Price Change Percentage: ${data['dp']}</p>
-                </div>
-              </a>
-        `;
+            // Check if price change percentage is positive or negative
+            const priceChangePercentage = parseFloat(data['dp']);
+            let textColor = 'white'; // Default text color
+
+            if (priceChangePercentage > 0) {
+                textColor = 'green'; // Change text color to green for positive percentage
+            } else if (priceChangePercentage < 0) {
+                textColor = 'red'; // Change text color to red for negative percentage
+            }
+
+            const columnBlock = document.createElement('div');
+            columnBlock.className = 'column-block-stocks';
+            columnBlock.innerHTML = `
+                <h1 style="color: ${textColor};">${symbol}</h1>
+                <p>Closing Price: ${data['c']}</p>
+                <p>Price Change Percentage: <span style="color: ${textColor};">${data['dp']}</span></p>
+            `;
+            columnContent.appendChild(columnBlock);
         }
     }
 }
