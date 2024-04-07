@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
+    font-family: Inter;
     background-color: #1E1E22;
     color: #fff;
 }
@@ -178,7 +178,7 @@ body {
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    font-family: serif;
+    font-family: Inter;
     text-align: left; /* Align text to the left */
 }
 
