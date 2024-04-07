@@ -27,7 +27,19 @@ async function createColumn(source) {
         }
 
         const response = await fetch(uri);
-        columnContent.innerHTML = await response.text();
+        let jsonString = await response.text();
+
+        switch (source) {
+            case "Sports News":
+                break;
+            case "Github Trending":
+                parseGithub(jsonString, columnContent)
+                break;
+            case "The New York Times":
+                break;
+            case "Stocks":
+                break;
+        }
     } catch (error) {
         console.error('Error fetching response:', error);
         columnContent.textContent = 'Error fetching data';
