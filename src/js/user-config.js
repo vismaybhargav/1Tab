@@ -1,5 +1,12 @@
 let idCount = 0;
 
+document.addEventListener('DOMContentLoaded', function() {
+    let userData = getUserData();
+    for(let i = 0; i < userData.subscribedFeeds.length; i++) {
+        selectedWebsites.push(userData.subscribedFeeds[i]);
+    }
+});
+
 /** * Generates UserData json object and places it into the localStorage for future use. <br><b>
  * Make sure that the userData hasn't already been created by this point
  * @param id id of the user
@@ -8,7 +15,7 @@ let idCount = 0;
 function createUserData(id, subscribedFeeds) {
     let userData = {
         "id": id,
-        "subscribed-feeds": subscribedFeeds
+        "subscribedFeeds": subscribedFeeds
     }
     let userString = JSON.stringify(userData);
     localStorage.setItem("onetab-userdata", userString);
