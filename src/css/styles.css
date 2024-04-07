@@ -190,10 +190,11 @@ body {
 .dropbtn {
     background-color: #2F7FFF; /* Set the background color to blue */
     color: white; /* Set the text color to white */
-    padding: 10px 20px; /* Adjust padding as needed */
+    padding: 10px 15px; /* Adjust padding as needed */
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 45px; /* Move the button a little more to the left */
 }
 
 /* CSS Styles */
@@ -208,4 +209,3 @@ body {
 .no-change {
     color: inherit; /* Default color */
 }
-
