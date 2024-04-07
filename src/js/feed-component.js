@@ -26,7 +26,6 @@ async function createColumn(source) {
                 break;
             case "Stocks":
                 uri = "https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/quotes";
-                columnHeader.className = 'column-header-stocks';
                 break;
         }
 
@@ -41,8 +40,10 @@ async function createColumn(source) {
                 parseGithub(jsonString, columnContent)
                 break;
             case "The New York Times":
+                parseNewYorkTimes(jsonString, columnContent);
                 break;
             case "Stocks":
+                console.log(jsonString);
                 break;
         }
     } catch (error) {

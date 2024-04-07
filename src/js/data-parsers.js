@@ -14,7 +14,7 @@ function parseGithub(jsonString, columnContent) {
 }
 
 function parseSportsNews(jsonString, columnContent) {
-    let columnData = JSON.parse(jsonString, null);
+    let columnData = JSON.parse(jsonString);
     console.log(JSON.stringify(columnData, null, 2));
     let articles = columnData.articles;
 
@@ -33,6 +33,20 @@ function parseSportsNews(jsonString, columnContent) {
     }
 }
 
-function parseStocks(jsonString, columnContent) {
-    let columnData = JSON.parse(jsonString, null);
+function parseNewYorkTimes(jsonString, columnContent) {
+    let columnData = JSON.parse(jsonString);
+    let results = columnData.results;
+
+    for(let i = 0; i < results.length; i++) {
+        let result = results[i];
+        columnContent.innerHTML += `
+        <a href="${result.url}">
+            <div class="column-block-nytimes">
+                <h1>${result.title}</h1>
+                <h3>${result.abstract}</h3>
+                <h5>${result.byline}</h5>
+            </div>
+        </a>
+        `;
+    }
 }
