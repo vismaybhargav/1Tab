@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>1Tab Website</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+    <script src="js/feed-component.js"></script>
 </head>
 <body>
 <div class="top-bar">
@@ -12,11 +14,11 @@
     <div class="dropdown">
         <button class="dropbtn">Choose Website</button>
         <div class="dropdown-content">
-            <a href="#" data-source="GitHub">GitHub <span class="remove-btn">✖</span></a>
-            <a href="#" data-source="ESPN">ESPN <span class="remove-btn">✖</span></a>
+            <a href="#" data-source="Github Trending">GitHub <span class="remove-btn">✖</span></a>
+            <a href="#" data-source="Sports News">Sports News <span class="remove-btn">✖</span></a>
             <a href="#" data-source="MarketStack">MarketStack <span class="remove-btn">✖</span></a>
             <a href="#" data-source="Reddit">Reddit <span class="remove-btn">✖</span></a>
-            <a href="#" data-source="New York Times">New York Times <span class="remove-btn">✖</span></a>
+            <a href="#" data-source="The New York Times">New York Times <span class="remove-btn">✖</span></a>
             <a href="#" data-source="Hacker News">Hacker News <span class="remove-btn">✖</span></a>
         </div>
     </div>
@@ -24,29 +26,9 @@
 
 <div class="scrolling-wrapper">
     <div class="container">
-        <div class="column">
-            <div class="column-header">Sports News</div>
-            <div class="column-divider"></div>
-            <div class="column-content" id="content"></div>
-        </div>
     </div>
 </div>
 
-<script>
-        // Function to fetch the response from the provided URL
-        async function fetchResponse() {
-            try {
-                const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/nytimes');
-                const data = await response.text();
-                document.body.innerHTML = data; // Set the body to the response text
-            } catch (error) {
-                console.error('Error fetching response:', error);
-            }
-        }
-
-        // Call the fetchResponse function when the page loads
-        window.onload = fetchResponse;
-</script>
 
 </body>
 </html>

@@ -3,12 +3,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const container = document.querySelector('.container');
     let selectedWebsites = [];
 
-    dropdownContent.addEventListener('click', function (event) {
+    dropdownContent.addEventListener('click', async function (event) {
         if (event.target.tagName === 'A') {
             const source = event.target.dataset.source;
             if (!selectedWebsites.includes(source) && selectedWebsites.length < 4) {
                 selectedWebsites.push(source);
-                const newColumn = createColumn(source);
+                const newColumn = await createColumn(source);
                 container.appendChild(newColumn);
             }
         } else if (event.target.classList.contains('remove-btn')) {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    function createColumn(source) {
+    async function createColumn(source) {
         const newColumn = document.createElement('div');
         newColumn.className = 'column';
 
@@ -25,15 +25,32 @@ document.addEventListener('DOMContentLoaded', function () {
         columnHeader.className = 'column-header';
         columnHeader.textContent = source;
 
-        const columnDivider = document.createElement('div');
-        columnDivider.className = 'column-divider'; // Add class for styling
-
         const columnContent = document.createElement('div');
         columnContent.className = 'column-content';
-        columnContent.textContent = 'Content for ' + source; // You can change this as per your requirement
+
+        // Fetch data based on the selected source
+        try {
+            if (source === 'Sports News') {
+                const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/sportsnews');
+                const data = await response.text();
+                columnContent.innerHTML = data; // Set the content of the column to the fetched data
+            }
+            if (source === 'Github Trending') {
+                const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/git_trending');
+                const data = await response.text();
+                columnContent.innerHTML = data; // Set the content of the column to the fetched data
+            }
+            if (source === 'The New York Times') {
+                const response = await fetch('https://d4f7d3de-971a-4441-bcef-425aec930868-00-tc400qk9kwau.janeway.replit.dev/nytimes');
+                const data = await response.text();
+                columnContent.innerHTML = data; // Set the content of the column to the fetched data
+            }
+        } catch (error) {
+            console.error('Error fetching response:', error);
+            columnContent.textContent = 'Error fetching data';
+        }
 
         newColumn.appendChild(columnHeader);
-        newColumn.appendChild(columnDivider); // Append the divider
         newColumn.appendChild(columnContent);
 
         return newColumn;
