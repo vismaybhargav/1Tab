@@ -44,12 +44,12 @@ async function createColumn(source) {
                 parseNewYorkTimes(jsonString, columnContent);
                 break;
             case "Stocks":
-                console.log(jsonString);
+                parseStocks(jsonString, columnContent);
                 break;
         }
     } catch (error) {
         console.error('Error fetching response:', error);
-        columnContent.textContent = 'Error fetching data';
+        columnContent.textContent = 'Error fetching data' + error;
     }
 
     newColumn.appendChild(columnHeader);

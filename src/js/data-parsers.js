@@ -50,3 +50,25 @@ function parseNewYorkTimes(jsonString, columnContent) {
         `;
     }
 }
+
+function parseStocks(jsonString, columnContent) {
+    let columnData = JSON.parse(jsonString);
+    let results = columnData.results;
+    for (const symbol in results) {
+        if (results.hasOwnProperty(symbol)) {
+            const data = results[symbol];
+            columnContent.innerHTML += `
+              <a href="https://example.com">
+                <div class="column-block-stocks">
+                 <h1>${symbol}</h1>
+                   <p>Closing Price: ${data['c']}</p>
+                   <p>Price Change Percentage: ${data['dp']}</p>
+                </div>
+              </a>
+        `;
+        }
+    }
+
+
+
+}
