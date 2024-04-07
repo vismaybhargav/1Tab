@@ -58,7 +58,19 @@ body {
     color: #fff; /* Set text color to white */
     background-color: #000; /* Set background color to black */
     padding: 10px; /* Add padding to the header */
-    padding-bottom: 40px;
+    padding-bottom: 10px;
+    border-top-left-radius: 10px; /* Add border radius to the top-left corner */
+    border-top-right-radius: 10px; /* Add border radius to the top-right corner */
+}
+
+.column-header-stocks {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 26px;
+    color: #fff; /* Set text color to white */
+    background-color: #377F2E; /* Set background color to black */
+    padding: 10px; /* Add padding to the header */
+    padding-bottom: 10px;
     border-top-left-radius: 10px; /* Add border radius to the top-left corner */
     border-top-right-radius: 10px; /* Add border radius to the top-right corner */
 }
@@ -70,7 +82,7 @@ body {
     color: #fff; /* Set text color to white */
     background-color: #FF0032; /* Set background color to black */
     padding: 10px; /* Add padding to the header */
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     border-top-left-radius: 10px; /* Add border radius to the top-left corner */
     border-top-right-radius: 10px; /* Add border radius to the top-right corner */
 }
@@ -82,7 +94,7 @@ body {
     color: #fff; /* Set text color to white */
     background-color: #0070EF; /* Set background color to black */
     padding: 10px; /* Add padding to the header */
-    padding-bottom: 40px;
+    padding-bottom: 10px;
     border-top-left-radius: 10px; /* Add border radius to the top-left corner */
     border-top-right-radius: 10px; /* Add border radius to the top-right corner */
 }

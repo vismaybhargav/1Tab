@@ -32,3 +32,7 @@ function parseSportsNews(jsonString, columnContent) {
         `;
     }
 }
+
+function parseStocks(jsonString, columnContent) {
+    let columnData = JSON.parse(jsonString, null);
+}
